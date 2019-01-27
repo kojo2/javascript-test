@@ -1,0 +1,56 @@
+<div class="container">
+
+    <!-- bootstrap dropdowns for filters -->
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      People
+    </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" [id]="person" *ngFor="let person of people" (click)="filterPerson($event)">{{person}}</a>
+        </div>
+    </div>
+    <!-- ends -->
+
+    <!-- tabs -->
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let tab of tabs">
+            <a class="nav-link active" [id]="tab.tab_id" href="#" (click)="tabClick($event)">{{tab.tab_name}}</a>
+        </li>
+    </ul>
+
+
+    <!-- ends -->
+
+    <!-- grid of videos -->
+    <div class="video-grid row">
+        <div *ngFor="let video of pageVideos" class="col-md-4">
+            <thumbnail [videoDetails]="video" (clickEvent)="openModal($event)"></thumbnail>
+        </div>
+    </div>
+    <!-- ends -->
+
+    <!-- pagination -->
+    <div class="pagination row">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" [hidden]="currentPage==0" (click)="prevPage()">Previous</a>
+                </li>
+                <li [class.active]="currentPage==number-1" class="page-item" *ngFor="let number of numbers">
+                    <a class="page-link" href="#" (click)="jumpToPage(number)">{{number}}</a>
+                </li>
+                <li class="page-item" [hidden]="currentPage==totalPages-1">
+                    <a class="page-link" href="#" (click)="nextPage()">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- ends -->
+
+    <!-- hidden modal with video player
+    <modal [hidden]="!modalVisible" [videoDetails]="videoChosen" (closeEvent)="closeModal()"></modal> -->
+
+    <ng-template ModalHolder></ng-template>
+</div>

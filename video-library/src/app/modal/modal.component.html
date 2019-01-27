@@ -1,0 +1,28 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" *ngIf="videoDetails">
+            <div class="modal-header">
+                <div *ngIf="videoDetails!=null">
+                    <h5 class="modal-title">{{videoDetails.title}}</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-text">
+                    <iframe width="100%" [src]="url"></iframe>
+                    <p>{{videoDetails.description}}</p>
+                    <ul>
+                        <li *ngFor="let tag of tags">
+                            <a href="#">{{tag}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-dismiss="modal " (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

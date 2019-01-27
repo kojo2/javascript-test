@@ -1,0 +1,29 @@
+.video-grid {
+    width: 1000px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 80px;
+    border: solid 1px black;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.dropdown {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-tabs {
+    margin-top: 20px;
+}

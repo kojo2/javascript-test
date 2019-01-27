@@ -1,0 +1,27 @@
+.modal {
+    display: block;
+}
+
+.modal-body {
+    width: 1000px;
+}
+
+.modal-dialog {
+    width: 1000px;
+    max-width: 1000px;
+    height: 80vh;
+}
+
+.modal-text {
+    overflow: scroll;
+    height: 76vh;
+}
+
+iframe {
+    height: 530px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
